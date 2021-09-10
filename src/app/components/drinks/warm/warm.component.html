@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<ion-content *ngIf="drinks$ | async as drinks">
+  <ion-card *ngFor="let drink of drinks" (click)="presentModal(drink.id, drink.name, drink.price, drink.type)">
+    <ion-card-header>
+      <ion-card-title>{{drink.name}}</ion-card-title>
+      <ion-card-subtitle>{{drink.price}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content *ngIf="drink.description != '/'">
+      {{drink.description}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<app-buttons></app-buttons>
+<app-footer></app-footer>

@@ -1,0 +1,27 @@
+<div *ngIf="cart$ | async as cart">
+</div>
+<ion-header>
+  <ion-toolbar>
+    <ion-title size="small">Odabir</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h5 style="padding-left: 20px;">Odabrali ste:</h5>
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+       <h5>{{name}}</h5><h5>{{price}}</h5>
+    </ion-label>
+  </ion-item>
+  <h6 style="padding-left: 20px;">Napomena:</h6>
+  <ion-textarea inputmode="text" placeholder="Nije obavezno" value="" [(ngModel)]="textboxInput"></ion-textarea>
+  <h6 style="padding-left: 20px;">Broj porcija: {{quantity}}</h6>
+  <div style="padding-top:8px;" id="flex">
+    <ion-button class="ion-text-center" color="success" expand="round" (click)="addOne()"><ion-icon name="add-outline"></ion-icon></ion-button>
+    <ion-button class="ion-text-center" color="danger" expand="round" (click)="removeOne()"><ion-icon name="remove-outline"></ion-icon></ion-button>
+  </div>
+  <h6 style="padding-left: 20px; padding-top: 20px;">Molimo Vas potvrdite</h6>
+  <div style="padding-top:8px;" id="flex">
+    <ion-button class="ion-text-center" color="success" expand="round" (click)="pushToCart();addedToCart();dismiss()"><ion-icon name="checkmark-outline"></ion-icon>Dodaj &nbsp;<ion-spinner *ngIf="loading"></ion-spinner></ion-button>
+    <ion-button  class="ion-text-center" color="danger" expand="round" (click)="dismiss()"><ion-icon name="close-outline"></ion-icon>Zatvori</ion-button>
+  </div>
+</ion-content>

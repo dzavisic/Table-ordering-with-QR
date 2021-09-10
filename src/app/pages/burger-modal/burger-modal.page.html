@@ -1,0 +1,81 @@
+<div *ngIf="cart$ | async as cart">
+
+</div>
+<ion-header>
+  <ion-toolbar>
+    <ion-title size="small">Odabir</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h5 style="padding-left: 20px;">Odabrali ste:</h5>
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+       <h5>{{name}}</h5><h5>{{price}}</h5>
+    </ion-label>
+  </ion-item>
+  <ion-grid style="padding-right: 15px;">
+    <ion-row class="ion-align-items-start">
+      <ion-col size="4">
+        <ion-chip outline color="success" (click)="add_to_food_addons('kečap')" id="kečap">
+          <ion-label>KEČAP</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col size="4">
+        <ion-chip outline color="success" (click)="add_to_food_addons('majoneza')" id="majoneza">
+          <ion-label>MAJONEZA</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col size="4">
+        <ion-chip outline color="success" (click)="add_to_food_addons('tartar')" id="tartar">
+          <ion-label>TARTAR</ion-label>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-start">
+      <ion-col size="4">
+        <ion-chip outline color="success" (click)="add_to_food_addons('garfield umak')" id="garfield umak">
+          <ion-label>GARFIELD</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col size="4">
+        <ion-chip outline color="success" (click)="add_to_food_addons('luk')" id="luk">
+          <ion-label>LUK</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col size="4">
+        <ion-chip outline color="success" (click)="add_to_food_addons('rajčica')" id="rajčica">
+          <ion-label>RAJČICA</ion-label>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-start">
+      <ion-col size="4">
+        <ion-chip outline color="success" (click)="add_to_food_addons('svježi')" id="svježi">
+          <ion-label>SVJEŽI</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col size="4">
+        <ion-chip outline color="success" (click)="add_to_food_addons('kiseli')" id="kiseli">
+          <ion-label>KISELI</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col size="4">
+        <ion-chip outline color="success" (click)="add_to_food_addons('zelena')" id="zelena">
+          <ion-label>ZELENA</ion-label>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <h6 style="padding-left: 20px;">Broj porcija: {{quantity}}</h6>
+  <div style="padding-top:8px;" id="flex">
+    <ion-button class="ion-text-center" color="success" expand="round" (click)="addOne()"><ion-icon name="add-outline"></ion-icon></ion-button>
+    <ion-button class="ion-text-center" color="danger" expand="round" (click)="removeOne()"><ion-icon name="remove-outline"></ion-icon></ion-button>
+  </div>
+  <h6 style="padding-left: 20px; padding-top: 20px;">Molimo Vas potvrdite</h6>
+  <div style="padding-top:8px;" id="flex">
+    <ion-button class="ion-text-center" color="success" expand="round" (click)="pushToCart();addedToCart();dismiss()"><ion-icon name="checkmark-outline"></ion-icon>Dodaj &nbsp;<ion-spinner *ngIf="loading"></ion-spinner></ion-button>
+    <ion-button  class="ion-text-center" color="danger" expand="round" (click)="dismiss()"><ion-icon name="close-outline"></ion-icon>Zatvori</ion-button>
+  </div>
+</ion-content>

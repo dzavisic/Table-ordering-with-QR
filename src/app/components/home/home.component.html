@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<ion-content>
+
+  <div style="margin-left: 20px !important;">
+      <h4 *ngIf="url_id != 'Dostava' && url_id != 'Nosi'">
+        Broj stola: {{url_id}}
+      </h4>
+      <h4 *ngIf="url_id == 'Dostava'">
+        {{url_id}}
+      </h4>
+      <h4 *ngIf="url_id == 'Nosi'">
+        Za ponjeti
+      </h4>
+  </div>
+
+  <ion-card (click)="redirect('/menu/food')">
+    <img src="../assets/img/food-card.jpg">
+    <ion-card-header>
+      <ion-card-subtitle>ODABIR HRANE</ion-card-subtitle>
+      <ion-card-title>HRANA</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Pogledajte izbor naših najukusnijih jela. Od hladnog predjela pa sve do deserta.
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card (click)="redirect('/menu/drink')">
+    <img src="../assets/img/drink-card.jpg">
+    <ion-card-header>
+      <ion-card-subtitle>ODABIR PIĆA</ion-card-subtitle>
+      <ion-card-title>PIĆE</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Vina vrhunskih kvaliteta, piva različitih aroma. Odaberite piće sebi po ukusu.
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<app-footer></app-footer>

@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<ion-content>
+  <ion-card (click)="redirect('/menu/drink/warm')">
+    <ion-card-header>
+      <ion-card-title>TOPLI NAPITCI</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card (click)="redirect('/menu/drink/noncarb')">
+    <ion-card-header>
+      <ion-card-title>NEGAZIRANA PIĆA</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card (click)="redirect('/menu/drink/carb')">
+    <ion-card-header>
+      <ion-card-title>GAZIRANA PIĆA</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card (click)="redirect('/menu/drink/strong')">
+    <ion-card-header>
+      <ion-card-title>ŽESTOKA PIĆA</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card (click)="redirect('/menu/drink/wine')">
+    <ion-card-header>
+      <ion-card-title>VINA</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card (click)="redirect('/menu/drink/beer')">
+    <ion-card-header>
+      <ion-card-title>PIVA</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+
+<!--<ion-button color="primary" expand="round" [routerLink]="['']" style="position: fixed; bottom: 50px; right:10px; z-index: 15px;">Natrag</ion-button>-->
+<app-buttons></app-buttons>
+<app-footer></app-footer>

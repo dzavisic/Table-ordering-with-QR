@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Table_ordering",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

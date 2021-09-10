@@ -1,0 +1,8 @@
+<div *ngIf="cart$ | async as cart">
+  <ion-fab vertical="bottom" horizontal="start" *ngFor="let item of cart" slot="fixed" style="padding-bottom: 60px; padding-left: 10px;" (click)="presentModalCart()">
+    <ion-fab-button *ngIf="(cart | json) != ({} | json)">
+      
+      <ion-icon name="basket"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>

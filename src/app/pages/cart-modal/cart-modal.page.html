@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Narudžba</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="cart$ | async as cart">
+  <h6 style="padding-left: 20px;">Odabrali ste:</h6>
+  <ion-list *ngFor="let item of cart">
+      <ion-item>
+        <ion-label class="ion-text-wrap">
+          <h6>
+            <div style="display: flex; justify-content:space-between; align-items: center;">
+              <div>{{item.name}}</div> 
+              <div><ion-button (click)="deleteItem(item.name,item.price,item.msg,item.quantity, item.type)" color="danger" size="small" shape="round"><ion-icon name="trash-outline"></ion-icon></ion-button> </div>
+            </div>
+          </h6>
+          <h6>{{item.price}} kn</h6>
+          <h6 style="padding-left: 20px;">Broj porcija: {{item.quantity}}</h6>
+          <h6 style="padding-left: 20px;" *ngIf="item.msg != '/'">Napomena: {{item.msg}}</h6>
+        </ion-label>
+      </ion-item>
+
+  </ion-list>
+  <h6 style="padding-left: 30px;">Ukupan iznos: {{full_price}} kn</h6>
+  <h6 style="padding-left: 30px;">Molimo Vas potvrdite</h6>
+  <div style="padding-top:8px; padding-bottom: 35px;" >
+    <ion-button id="btnn" color="success" expand="round" (click)="orderPlaced()"><ion-icon name="checkmark-outline"></ion-icon>Potvrdi &nbsp;<ion-spinner *ngIf="loading"></ion-spinner></ion-button>
+    <ion-button id="btnn" color="warning" expand="round" (click)="orderDeleted()"><ion-icon name="trash-outline"></ion-icon>Obriši narudžbu &nbsp;<ion-spinner *ngIf="loading"></ion-spinner></ion-button>
+    <ion-button id="btnn" color="danger" expand="round" (click)="dismiss()"><ion-icon name="close-outline"></ion-icon>Zatvori</ion-button>
+  </div>
+</ion-content>
