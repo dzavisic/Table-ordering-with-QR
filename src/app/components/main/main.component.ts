@@ -22,6 +22,7 @@ export class MainComponent implements OnInit {
       this.url_id = params['id'];
     });
     
+    location.reload()
     
     setTimeout(()=>{
       this.cartService.emptyCartDish(this.url_id);
