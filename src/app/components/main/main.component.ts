@@ -26,8 +26,10 @@ export class MainComponent implements OnInit {
     setTimeout(()=>{
       this.cartService.emptyCartDish(this.url_id);
       this.cartService.create_cart(this.url_id);
-      let url_path = this.url_id + '/home';
-      this._router.navigate([url_path]);
+      setTimeout(()=>{
+        let url_path = this.url_id + '/home';
+        this._router.navigate([url_path]);
+      },300)
     },1000)
   }
 
