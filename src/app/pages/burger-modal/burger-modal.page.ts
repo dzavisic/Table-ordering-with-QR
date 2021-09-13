@@ -87,9 +87,6 @@ export class BurgerModalPage implements OnInit {
       }
     },100)
     
-    setTimeout(()=>{
-      location.reload();
-    },200)
   }
   
   add_to_food_addons(addon:string){

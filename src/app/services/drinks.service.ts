@@ -15,12 +15,12 @@ export class DrinksService {
   warm$: Observable<any>;
 
   constructor(private http: HttpClient) { 
-    this.nonCarb$ = this.http.get('http://localhost:3014/api/noncarbonated/all');
-    this.carb$ = this.http.get('http://localhost:3014/api/carbonated/all');
-    this.strong$ = this.http.get('http://localhost:3014/api/strong/all');
-    this.beer$ = this.http.get('http://localhost:3014/api/beer/all');
-    this.wine$ = this.http.get('http://localhost:3014/api/wine/all');
-    this.warm$ = this.http.get('http://localhost:3014/api/warm_beverages/all');
+    this.nonCarb$ = this.http.get('https://restaurant-table-server.herokuapp.com/api/noncarbonated/all');
+    this.carb$ = this.http.get('https://restaurant-table-server.herokuapp.com/api/carbonated/all');
+    this.strong$ = this.http.get('https://restaurant-table-server.herokuapp.com/api/strong/all');
+    this.beer$ = this.http.get('https://restaurant-table-server.herokuapp.com/api/beer/all');
+    this.wine$ = this.http.get('https://restaurant-table-server.herokuapp.com/api/wine/all');
+    this.warm$ = this.http.get('https://restaurant-table-server.herokuapp.com/api/warm_beverages/all');
   }
 
 }

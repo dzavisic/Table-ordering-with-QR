@@ -90,10 +90,6 @@ export class AddToCartModalPage implements OnInit {
       }
     },100)
     
-    setTimeout(()=>{
-      location.reload();
-    },200)
-    
   }
 
   

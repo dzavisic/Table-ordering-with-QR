@@ -26,6 +26,9 @@ export class ButtonsComponent implements OnInit {
       this.url_id = params['id'];
     });
     this.cart$ = this.cartService.carts[this.url_id-1].pipe(map((data)=>data['data']));
+    setInterval(()=>{
+      this.cart$ = this.cartService.carts[this.url_id-1].pipe(map((data)=>data['data']));
+    },2500)
   }
 
   async presentModalCart() {

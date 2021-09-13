@@ -50,10 +50,29 @@ export class CartModalPage implements OnInit {
         type:type
       }
       this.cartService.update_cart_quantity(this.url_id, data);
-      location.reload();
+      
+      setTimeout(()=>{
+        this.full_price = 0;
+        this.cart$ = this.cartService.carts[this.url_id-1].pipe(map((data)=>data['data']), tap((data)=>{
+          for(var i=0;i<data['length'];i++){
+            this.full_price = this.full_price + data[i]['price']
+          }
+        })
+        );
+      },200)
+      
     }else{
       this.cartService.deleteItemFromCart(this.url_id,name,quantity);
-      location.reload();
+      
+      setTimeout(()=>{
+        this.full_price = 0;
+        this.cart$ = this.cartService.carts[this.url_id-1].pipe(map((data)=>data['data']), tap((data)=>{
+          for(var i=0;i<data['length'];i++){
+            this.full_price = this.full_price + data[i]['price']
+          }
+        })
+        );
+      },200)
     }
   }
 
