@@ -26,8 +26,9 @@ export class MainComponent implements OnInit {
       this.cartService.emptyCartDish(this.url_id);
       this.cartService.create_cart(this.url_id);
       setTimeout(()=>{
-        let url_path = this.url_id + '/home';
-        this._router.navigate([url_path]);
+        location.href=`https://restaurant-table-client.herokuapp.com/${this.url_id}/home`
+        //let url_path = this.url_id + '/home';
+        //this._router.navigate([url_path]);
       },500)
     },1000)
   }

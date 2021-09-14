@@ -110,7 +110,8 @@ export class CartModalPage implements OnInit {
     });
     toast.present();
     this.dismiss();
-    this._router.navigate(['/'+this.url_id]);
+    location.href=`https://restaurant-table-client.herokuapp.com/${this.url_id}`
+    //this._router.navigate(['/'+this.url_id]);
   }
 
   dismiss() {
